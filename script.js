@@ -1,4 +1,4 @@
-var settings = {
+var filter = {
 	"async": true,
 	"crossDomain": true,
     "url": "https://the-cocktail-db.p.rapidapi.com/list.php?a=list",
@@ -10,11 +10,11 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(filter).done(function (response) {
 	console.log(response);
 });
 
-var settings = {
+var category = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
@@ -25,11 +25,11 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(category).done(function (response) {
 	console.log(response);
 });
 
-var settings = {
+var ingredients = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
@@ -40,11 +40,11 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(ingredients).done(function (response) {
 	console.log(response);
 });
 
-var settings = {
+var glass = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?g=list",
@@ -55,12 +55,12 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(glass).done(function (response) {
 	console.log(response);
 });
 
 
-var settings = {
+var clock = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://world-clock.p.rapidapi.com/json/utc/now",
@@ -73,6 +73,6 @@ var settings = {
 	"data": {}
 }
 
-$.ajax(settings).done(function (response) {
+$.ajax(clock).done(function (response) {
 	console.log(response);
 });
