@@ -1,65 +1,15 @@
-// var filter = {
-// 	"async": true,
-// 	"crossDomain": true,
-//     "url": "https://the-cocktail-db.p.rapidapi.com/list.php?a=list",
-    
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "fc5f9a45b1mshee0ed2db4af132cp10d4e9jsn16a42c447127"
-// 	}
-// }
+// button to flip the coin
+var coinButton = document.querySelector("button");
+coinButton.addEventListener("click", function(event){
+	$(".gif").empty();
+	$("#joke").empty();
+	coinFlip()
 
-// $.ajax(filter).done(function (response) {
-// 	console.log(response);
-// });
 
-// var category = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?c=list",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "fc5f9a45b1mshee0ed2db4af132cp10d4e9jsn16a42c447127"
-// 	}
-// }
+	
+});
 
-// $.ajax(category).done(function (response) {
-// 	console.log(response);
-// });
-
-// var ingredients = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?i=list",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "fc5f9a45b1mshee0ed2db4af132cp10d4e9jsn16a42c447127"
-// 	}
-// }
-
-// $.ajax(ingredients).done(function (response) {
-// 	console.log(response);
-// });
-
-// var glass = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://the-cocktail-db.p.rapidapi.com/list.php?g=list",
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "the-cocktail-db.p.rapidapi.com",
-// 		"x-rapidapi-key": "fc5f9a45b1mshee0ed2db4af132cp10d4e9jsn16a42c447127"
-// 	}
-// }
-
-// $.ajax(glass).done(function (response) {
-// 	console.log(response);
-// });
-
-var settings = {
+var coin = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://coin-flip1.p.rapidapi.com/headstails",
@@ -70,13 +20,26 @@ var settings = {
 	}
 }
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-    
-    $("#outcome").text(response.outcome);
-});
+function coinFlip() {
+	$.ajax(coin).done(function (response) {
+		
+		
+		$("#outcome").text(response.outcome);
+		console.log(response)
+		if (response.outcome === "Heads") {
+			randomJoke()
 
-var randomJoke = {
+		}
+	else {randomGif()}			
+		
+
+	});
+
+}
+
+function randomJoke() {
+
+var randomJokeCall = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://joke3.p.rapidapi.com/v1/joke",
@@ -87,9 +50,41 @@ var randomJoke = {
 	}
 }
 
-$.ajax(randomJoke).done(function (response) {
+
+	$.ajax(randomJokeCall).done(function (response) {
+	
+	$("#joke").text(response.content);
     
-    $("#joke").text(response.content);
-    console.log(response.content);
 });
+};
+
+
+
+var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=2qTgWHYjyZt8hu18MtbvP1iJCCUjoEox";
+
+function randomGif() {
+	$.ajax(
+	{	method: "GET",
+        url: queryURL,
+	}).then(function (response) {
+		// $(".gif").empty();
+		var newGif = $("<img>");
+        newGif.attr("src", response.data.image_url);
+		$(".gif").append(newGif)
+	})
+}
+		
+		
+
+	
+	// if (coinFlip === ("Heads")){
+	// 	randomJoke()
+
+	// }
+	
+	
+	// else {randomGif()
+	// }
+
+
 
