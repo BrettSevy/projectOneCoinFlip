@@ -24,13 +24,17 @@ function coinFlip() {
 	$.ajax(coin).done(function (response) {
 		
 		
-		$("#outcome").text(response.outcome);
 		console.log(response)
 		if (response.outcome === "Heads") {
-			randomJoke()
+			randomJoke();
+			$(".heads").attr("src", "assets/heads.jpg");
 
 		}
-	else {randomGif()}			
+	else {
+		randomGif();
+		$(".heads").attr("src", "assets/tails.jpg");
+	
+	}			
 		
 
 	});
