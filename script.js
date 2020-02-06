@@ -5,6 +5,7 @@ coinButton.addEventListener("click", function(event){
 	$("#joke").empty();
 	coinFlip();
 	$("#flipCoinText").text("");
+	$("#flipMe").addClass("animated flip")
 	
 });
 
@@ -28,16 +29,20 @@ function coinFlip() {
 		if (response.outcome === "Heads") {
 			randomJoke();
 			$(".heads").attr("src", "assets/heads.jpg");
+			$(".heads").addClass("animated flip")
 
 		}
 	else {
 		randomGif();
 		$(".heads").attr("src", "assets/tails.jpg");
+		$(".heads").addClass("animated flip")
 	
 	}			
-		
-
-	});
+	$("#flipMe").removeClass("animated flip")
+	
+	
+});
+$(".heads").removeClass("animated flip")
 
 }
 
