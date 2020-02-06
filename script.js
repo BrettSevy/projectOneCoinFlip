@@ -3,11 +3,11 @@ var coinButton = document.querySelector("button");
 coinButton.addEventListener("click", function(event){
 	$(".gif").empty();
 	$("#joke").empty();
-	coinFlip()
-
-
+	coinFlip();
+	$("#flipCoinText").text("");
 	
 });
+
 
 var coin = {
 	"async": true,
