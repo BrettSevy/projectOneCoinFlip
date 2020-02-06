@@ -17,3 +17,10 @@
 .btn{
     background-color: white;
 }
+
+input[type="button"]
+{
+    
+    border: none;
+    outline:none;
+}
