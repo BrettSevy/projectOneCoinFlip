@@ -9,7 +9,7 @@ coinButton.addEventListener("click", function(event){
 	
 });
 
-
+// coin flip API call
 var coin = {
 	"async": true,
 	"crossDomain": true,
@@ -24,7 +24,7 @@ var coin = {
 function coinFlip() {
 	$.ajax(coin).done(function (response) {
 		
-		
+	//adding the animated coin "flipping" on the outcome 
 		console.log(response)
 		if (response.outcome === "Heads") {
 			randomJoke();
@@ -37,7 +37,8 @@ function coinFlip() {
 		$(".heads").attr("src", "assets/tails.jpg");
 		$(".heads").addClass("animated flip")
 	
-	}			
+	}	
+	//removing the animation 
 	$("#flipMe").removeClass("animated flip")
 	
 	
@@ -46,6 +47,7 @@ $(".heads").removeClass("animated flip")
 
 }
 
+// random joke API call
 function randomJoke() {
 
 var randomJokeCall = {
@@ -68,7 +70,7 @@ var randomJokeCall = {
 };
 
 
-
+// third party giphy API call
 var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=2qTgWHYjyZt8hu18MtbvP1iJCCUjoEox";
 
 function randomGif() {
@@ -76,7 +78,7 @@ function randomGif() {
 	{	method: "GET",
         url: queryURL,
 	}).then(function (response) {
-		// $(".gif").empty();
+	
 		var newGif = $("<img>");
         newGif.attr("src", response.data.image_url);
 		$(".gif").append(newGif)

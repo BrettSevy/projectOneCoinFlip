@@ -11,6 +11,7 @@
     width:80%;
     height:auto;
     }
+
 .heads {
     display: block;
     margin-left: auto;
@@ -29,6 +30,7 @@ input[type="button"]
     border: none;
     outline:none;
 }
+
 .dot {
     height: 200px;
     width: 200px;
@@ -36,37 +38,33 @@ input[type="button"]
     border-radius: 50%;
     display: inline-block;
   }
+
 .btn:focus{
     display: none;
 }
 
 #joke{
 font-size: xx-large;
-
 }
 
-
-
 .jumbotron{
-    background: transparent;
-    /* background-image: url("assets/coinsBottom.jpg"); */
-    background-repeat: no-repeat;
+background: transparent;
+background-repeat: no-repeat;
 background-position: top left;
 background-attachment: fixed;
-
 }
 
 body{
 background-image: url("assets/coinsBottom2.jpg");
 background-repeat: no-repeat;
 background-size: cover;
-
 }
 
 #outcome.heads.dot {
     height: 0px;
     width: 0px;
 }
+
 #outcome.heads.dot.animated.flip {
     height: 200px;
     width: 200px;
