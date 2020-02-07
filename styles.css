@@ -1,3 +1,8 @@
+*{
+    font-family: 'Permanent Marker', cursive;
+
+}
+
 .gif img
 {
         display: block;
@@ -33,4 +38,30 @@ input[type="button"]
   }
 .btn:focus{
     display: none;
+}
+
+#joke{
+font-size: xx-large;
+
+}
+
+#flipMe{
+ 
+ 
+}
+
+.jumbotron{
+    background: transparent;
+    /* background-image: url("assets/coinsBottom.jpg"); */
+    background-repeat: no-repeat;
+background-position: top left;
+background-attachment: fixed;
+
+}
+
+body{
+background-image: url("assets/coinsBottom2.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+
 }
