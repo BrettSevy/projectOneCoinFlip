@@ -86,14 +86,7 @@ function randomGif() {
 		
 
 	
-	// if (coinFlip === ("Heads")){
-	// 	randomJoke()
-
-	// }
 	
-	
-	// else {randomGif()
-	// }
 
 
 

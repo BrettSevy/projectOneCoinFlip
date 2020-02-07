@@ -45,10 +45,7 @@ font-size: xx-large;
 
 }
 
-#flipMe{
- 
- 
-}
+
 
 .jumbotron{
     background: transparent;
@@ -64,4 +61,13 @@ background-image: url("assets/coinsBottom2.jpg");
 background-repeat: no-repeat;
 background-size: cover;
 
+}
+
+#outcome.heads.dot {
+    height: 0px;
+    width: 0px;
+}
+#outcome.heads.dot.animated.flip {
+    height: 200px;
+    width: 200px;
 }
